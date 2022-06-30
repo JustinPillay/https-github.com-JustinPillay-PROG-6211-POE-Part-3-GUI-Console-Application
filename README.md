@@ -38,7 +38,9 @@ Run the exe file and budget away!
 
 --User Manual
 
+Link to User Manual!
 
+https://github.com/JustinPillay/https-github.com-JustinPillay-PROG-6211-POE-Part-3-GUI-Console-Application/blob/main/Budgeting%20Application%20User%20Manual.pdf
 
 --CONTACT INFORMATION
 
