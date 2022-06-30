@@ -23,7 +23,7 @@ This software requires you to have at least Windows 7 with the following hardwar
 To run the console application, you will have to download the zip from this GitHub repository. (See user manual for more info.)
 Once the package is downloaded, unzip it to a location (this location will be your "root" for the following step.)
 	
-~rootfolder~\\Prog6211_POE_Part_3\bin\Debug\net6.0windows\Prog_6211_POE_Part_3.exe	
+rootfolder\\Prog6211_POE_Part_3\bin\Debug\net6.0windows\Prog_6211_POE_Part_3.exe	
 
 Run the exe file and budget away!
   
@@ -58,5 +58,5 @@ https://github.com/JustinPillay/https-github.com-JustinPillay-PROG-6211-POE-Part
 
 --FEEDBACK IMPLEMENTATION
 
-From my feedback received, I made some adjustments to the math surrounding the balance and warning that shows when the user has spend over 75% of their [now] net income. The user manual was made with the principle of making the instructions a lot clearer and straightforward as well as providing more information with regards to spec and software. Changelog with changes made from previous version added to readme.
+From my feedback received, I made some adjustments to the math surrounding the balance and warning that shows when the user has spend over 75% of their [now] net income. The user manual was made with the principle of making the instructions a lot clearer and straightforward as well as providing more information with regards to spec and software. Classes were separated properly into their own .CS files making the code a lot more readable. Changelog with changes made from previous version added to readme.
 
