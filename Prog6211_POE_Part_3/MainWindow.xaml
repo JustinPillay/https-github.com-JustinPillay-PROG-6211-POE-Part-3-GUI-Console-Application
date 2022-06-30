@@ -1,0 +1,744 @@
+﻿<Window
+    x:Class="Prog_6211_POE_Part_3.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Prog_6211_POE_Part_3"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Budgeting Application"
+    Width="1055"
+    Height="938"
+    ResizeMode="CanMinimize"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="SingleBorderWindow"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <Style x:Key="RoundedButton" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#FF464646" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF73A0A4" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Canvas x:Name="cnvMain">
+
+
+        <Rectangle
+            Canvas.Left="319"
+            Canvas.Top="430"
+            Width="336"
+            Height="219"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Stroke="Black" />
+
+
+        <Rectangle
+            Canvas.Left="29"
+            Canvas.Top="109"
+            Width="270"
+            Height="184"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Stroke="Black" />
+
+        <Rectangle
+            Canvas.Left="679"
+            Canvas.Top="109"
+            Width="333"
+            Height="367"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Stroke="Black" />
+
+        <Rectangle
+            Canvas.Left="318"
+            Canvas.Top="109"
+            Width="337"
+            Height="300"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Stroke="Black" />
+
+        <Rectangle
+            Canvas.Left="29"
+            Canvas.Top="314"
+            Width="270"
+            Height="335"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Stroke="Black" />
+
+        <Label
+            Canvas.Left="38"
+            Canvas.Top="319"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="General Expenses:"
+            FontFamily="Gadugi"
+            FontSize="16"
+            FontWeight="Bold" />
+        <Canvas
+            Canvas.Left="38"
+            Canvas.Top="448"
+            Width="244"
+            Height="158"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center">
+            <Label
+                Width="107"
+                Height="27"
+                Content="Groceries:" />
+            <TextBox
+                x:Name="txtboxGroceries"
+                Canvas.Left="133"
+                Canvas.Top="4"
+                Width="111"
+                Height="20"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                PreviewTextInput="txtboxGroceries_PreviewTextInput"
+                TextWrapping="Wrap" />
+            <Label
+                Canvas.Top="33"
+                Width="107"
+                Height="26"
+                Content="Utilities:" />
+            <TextBox
+                x:Name="txtboxUtilities"
+                Canvas.Left="133"
+                Canvas.Top="36"
+                Width="111"
+                Height="20"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                PreviewTextInput="txtboxUtilities_PreviewTextInput"
+                TextWrapping="Wrap" />
+            <Label
+                Canvas.Top="64"
+                Width="107"
+                Height="26"
+                Content="Travel" />
+            <TextBox
+                x:Name="txtboxTravel"
+                Canvas.Left="133"
+                Canvas.Top="67"
+                Width="111"
+                Height="20"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                PreviewTextInput="txtboxTravel_PreviewTextInput"
+                TextWrapping="Wrap" />
+            <TextBox
+                x:Name="txtboxCommunication"
+                Canvas.Left="133"
+                Canvas.Top="98"
+                Width="111"
+                Height="20"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                PreviewTextInput="txtboxCommunication_PreviewTextInput"
+                TextWrapping="Wrap" />
+            <Label
+                Canvas.Top="126"
+                Width="107"
+                Height="26"
+                Content="Other:" />
+            <TextBox
+                x:Name="txtboxOther"
+                Canvas.Left="133"
+                Canvas.Top="129"
+                Width="111"
+                Height="20"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                PreviewTextInput="txtboxOther_PreviewTextInput"
+                TextWrapping="Wrap" />
+            <Label
+                Canvas.Top="95"
+                Width="107"
+                Height="26"
+                Content="Communication:" />
+            <Canvas
+                Canvas.Left="42"
+                Canvas.Top="313"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" />
+        </Canvas>
+        <Canvas
+            Canvas.Left="333"
+            Canvas.Top="109"
+            Width="252"
+            Height="120"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top">
+            <Label
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Living Expense:"
+                FontFamily="Gadugi"
+                FontSize="16"
+                FontWeight="Bold" />
+            <Label
+                Canvas.Left="1"
+                Canvas.Top="45"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Will you be renting or purchasing a property?" />
+            <RadioButton
+                x:Name="rbtnRenting"
+                Canvas.Left="8"
+                Canvas.Top="88"
+                Width="110"
+                Height="16"
+                Checked="rbtnRenting_Checked"
+                Content="Renting" />
+            <RadioButton
+                x:Name="rbtnPurchasing"
+                Canvas.Left="8"
+                Canvas.Top="104"
+                Width="110"
+                Height="16"
+                Checked="rbtnPurchasing_Checked"
+                Content="Purchasing" />
+            <Label
+                Canvas.Top="355"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Will you be using the savings module?" />
+        </Canvas>
+        <Canvas
+            x:Name="cnvPurchasing"
+            Canvas.Left="333"
+            Canvas.Top="245"
+            Width="298"
+            Height="155"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Visibility="Collapsed">
+            <Label
+                Canvas.Left="6"
+                Canvas.Top="34"
+                Width="143"
+                Height="27"
+                Content="Purchase Price:" />
+            <TextBox
+                x:Name="txtboxHomePurchasePrice"
+                Canvas.Left="178"
+                Canvas.Top="38"
+                Width="120"
+                Height="20"
+                PreviewTextInput="txtboxHomePurchasePrice_PreviewTextInput"
+                TextWrapping="Wrap" />
+            <Label
+                Canvas.Left="6"
+                Canvas.Top="67"
+                Width="143"
+                Height="26"
+                Content="Deposit:" />
+            <TextBox
+                x:Name="txtboxHomeDeposit"
+                Canvas.Left="178"
+                Canvas.Top="70"
+                Width="120"
+                Height="20"
+                PreviewTextInput="txtboxHomeDeposit_PreviewTextInput"
+                TextWrapping="Wrap" />
+            <Label
+                Canvas.Left="6"
+                Canvas.Top="98"
+                Width="143"
+                Height="26"
+                Content="Interest Rate(%):" />
+            <TextBox
+                x:Name="txtboxHomeInterestRate"
+                Canvas.Left="178"
+                Canvas.Top="101"
+                Width="120"
+                Height="20"
+                PreviewTextInput="txtboxHomeInterestRate_PreviewTextInput"
+                TextWrapping="Wrap" />
+            <Label
+                Canvas.Left="6"
+                Canvas.Top="129"
+                Width="143"
+                Height="26"
+                Content="Payment Term (Months):" />
+            <TextBox
+                x:Name="txtboxHomePaymentTerm"
+                Canvas.Left="178"
+                Canvas.Top="132"
+                Width="120"
+                Height="20"
+                PreviewTextInput="txtboxHomePaymentTerm_PreviewTextInput"
+                TextWrapping="Wrap" />
+            <Label
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Please fill out the following fields (In Rands:)" />
+        </Canvas>
+        <Canvas
+            x:Name="cnvRental"
+            Canvas.Left="333"
+            Canvas.Top="245"
+            Width="302"
+            Height="63"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Visibility="Collapsed">
+            <Label
+                Canvas.Left="6"
+                Canvas.Top="34"
+                Width="140"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Content="Monthly Rental Amount:" />
+            <TextBox
+                x:Name="txtboxRentalAmount"
+                Canvas.Left="178"
+                Canvas.Top="38"
+                Width="120"
+                Height="20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                PreviewTextInput="txtboxRentalAmount_PreviewTextInput"
+                TextWrapping="Wrap" />
+            <Label
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Please enter your rent amount (In Rands:)" />
+        </Canvas>
+        <Canvas
+            Canvas.Left="685"
+            Canvas.Top="109"
+            Width="186"
+            Height="120"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center">
+            <Label
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Vehicle Expense:"
+                FontFamily="Gadugi"
+                FontSize="16"
+                FontWeight="Bold" />
+            <Label
+                Canvas.Left="1"
+                Canvas.Top="45"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Will you be purchasing a vehicle?" />
+            <RadioButton
+                x:Name="rbtnVehicleYes"
+                Canvas.Left="8"
+                Canvas.Top="88"
+                Width="110"
+                Height="16"
+                Checked="rbtnVehicleYes_Checked"
+                Content="Yes" />
+            <RadioButton
+                x:Name="rbtnVehicleNo"
+                Canvas.Left="8"
+                Canvas.Top="104"
+                Width="110"
+                Height="16"
+                Checked="rbtnVehicleNo_Checked"
+                Content="No" />
+        </Canvas>
+        <Canvas
+            x:Name="cnvVehicle"
+            Canvas.Left="686"
+            Canvas.Top="238"
+            Width="304"
+            Height="216"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Visibility="Collapsed">
+            <Label
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Please enter the following details (In Rands:)" />
+            <Label
+                Canvas.Left="12"
+                Canvas.Top="33"
+                Width="143"
+                Height="27"
+                Content="Make:" />
+            <TextBox
+                x:Name="txtboxVehicleMake"
+                Canvas.Left="184"
+                Canvas.Top="37"
+                Width="120"
+                Height="20"
+                TextWrapping="Wrap" />
+            <Label
+                Canvas.Left="12"
+                Canvas.Top="66"
+                Width="143"
+                Height="26"
+                Content="Model:" />
+            <TextBox
+                x:Name="txtboxVehicleModel"
+                Canvas.Left="184"
+                Canvas.Top="69"
+                Width="120"
+                Height="20"
+                TextWrapping="Wrap" />
+            <Label
+                Canvas.Left="12"
+                Canvas.Top="97"
+                Width="143"
+                Height="26"
+                Content="Purchase Price:" />
+            <TextBox
+                x:Name="txtboxVehiclePurchasePrice"
+                Canvas.Left="184"
+                Canvas.Top="100"
+                Width="120"
+                Height="20"
+                PreviewTextInput="txtboxVehiclePurchasePrice_PreviewTextInput"
+                TextWrapping="Wrap" />
+            <Label
+                Canvas.Left="12"
+                Canvas.Top="128"
+                Width="143"
+                Height="26"
+                Content="Deposit:" />
+            <TextBox
+                x:Name="txtboxVehicleDeposit"
+                Canvas.Left="184"
+                Canvas.Top="131"
+                Width="120"
+                Height="20"
+                PreviewTextInput="txtboxVehicleDeposit_PreviewTextInput"
+                TextWrapping="Wrap" />
+            <Label
+                Canvas.Left="12"
+                Canvas.Top="159"
+                Width="143"
+                Height="26"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Interest Rate(%):" />
+            <TextBox
+                x:Name="txtboxVehicleInterestRate"
+                Canvas.Left="184"
+                Canvas.Top="162"
+                Width="120"
+                Height="20"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                PreviewTextInput="txtboxVehicleInterestRate_PreviewTextInput"
+                TextWrapping="Wrap" />
+            <Label
+                Canvas.Left="12"
+                Canvas.Top="190"
+                Width="143"
+                Height="26"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Insurance Premium:" />
+            <TextBox
+                x:Name="txtboxVehiclePremium"
+                Canvas.Left="184"
+                Canvas.Top="193"
+                Width="120"
+                Height="20"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                PreviewTextInput="txtboxVehiclePremium_PreviewTextInput"
+                TextWrapping="Wrap" />
+        </Canvas>
+        <Label
+            Canvas.Left="-10"
+            Canvas.Top="14"
+            Width="1080"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Background="#FF373535"
+            BorderThickness="10"
+            Content="  Personal Monthly Budget Planner"
+            FontFamily="Gadugi"
+            FontSize="36"
+            FontWeight="Bold"
+            Foreground="#FFA5DFE4" />
+        <Label
+            Canvas.Left="41"
+            Canvas.Top="355"
+            Width="200"
+            Height="74"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Please enter your estimated&#xA;monthly expense below(In Rands:)&#xA;(If the field does not apply to you, &#xA;please enter a 0.)" />
+        <Menu
+            Canvas.Left="-10"
+            Canvas.Top="-10"
+            Width="1080"
+            Height="47"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            BorderThickness="10">
+            <MenuItem
+                x:Name="miSystem"
+                Height="25"
+                Click="miSystem_Click"
+                Header="Exit"
+                StaysOpenOnClick="True" />
+            <MenuItem x:Name="miHelp" Header="Help" />
+        </Menu>
+        <Label
+            Canvas.Left="38"
+            Canvas.Top="109"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Income:"
+            FontFamily="Gadugi"
+            FontSize="16"
+            FontWeight="Bold" />
+        <Label
+            Canvas.Left="38"
+            Canvas.Top="140"
+            Width="244"
+            Height="61"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Please enter the following details&#xA;(Rands for Gross Monthly Income field and&#xD;&#xA; % for Tax Deduction field.)" />
+        <Canvas
+            Canvas.Left="34"
+            Canvas.Top="211"
+            Width="260"
+            Height="62"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top">
+            <Label
+                Width="135"
+                Height="27"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Content="Gross Monthly Income:" />
+            <TextBox
+                x:Name="txtboxIncome"
+                Canvas.Left="135"
+                Canvas.Top="4"
+                Width="111"
+                Height="20"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                PreviewTextInput="txtboxIncome_PreviewTextInput"
+                TextWrapping="Wrap" />
+            <Label
+                Canvas.Top="33"
+                Width="135"
+                Height="26"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Content="Tax Deduction:" />
+            <TextBox
+                x:Name="txtboxTaxDeduction"
+                Canvas.Left="135"
+                Canvas.Top="36"
+                Width="111"
+                Height="20"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                PreviewTextInput="txtboxTaxDeduction_PreviewTextInput"
+                TextWrapping="Wrap" />
+            <Canvas
+                Canvas.Left="42"
+                Canvas.Top="313"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" />
+        </Canvas>
+        <Button
+            x:Name="btnSubmit"
+            Canvas.Left="679"
+            Canvas.Top="526"
+            Width="341"
+            Height="56"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            HorizontalContentAlignment="Left"
+            Background="#FF373535"
+            BorderBrush="{x:Null}"
+            Click="btnSubmit_Click"
+            Content="Submit Details"
+            FontFamily="Gadugi"
+            FontSize="22"
+            FontWeight="Bold"
+            Foreground="#FFA5DFE4"
+            Style="{DynamicResource RoundedButton}" />
+        <TextBox
+            x:Name="txtboxReport"
+            Canvas.Left="21"
+            Canvas.Top="712"
+            Width="309"
+            Height="177"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Background="#FF373535"
+            BorderBrush="#FF73A0A4"
+            BorderThickness="5,1,5,5"
+            FontFamily="Gadugi"
+            FontSize="14"
+            Foreground="#FFEAEAEA"
+            SelectionBrush="#FF73A0A4"
+            TextWrapping="Wrap"
+            Visibility="Visible" />
+        <Label
+            Canvas.Left="110"
+            Canvas.Top="676"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Expense Report:"
+            FontFamily="Gadugi"
+            FontSize="16"
+            FontWeight="Bold" />
+        <Label
+            Canvas.Left="325"
+            Canvas.Top="433"
+            Height="31"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Content="Savings: (Optional)"
+            FontFamily="Gadugi"
+            FontSize="16"
+            FontWeight="Bold" />
+        <Canvas
+            x:Name="cnvSavings"
+            Canvas.Left="337"
+            Canvas.Top="526"
+            Width="299"
+            Height="114"
+            Visibility="Collapsed">
+            <Label Content="Saving Reason:" />
+            <Label
+                Canvas.Top="31"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Content="Goal Amount:" />
+            <Label
+                Canvas.Top="62"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Content="Estimated Interest Rate:" />
+            <Label
+                Canvas.Top="88"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Content="Duration (In Years:)" />
+            <TextBox
+                x:Name="txtboxSavingReason"
+                Canvas.Left="179"
+                Canvas.Top="4"
+                Width="120"
+                TextWrapping="Wrap" />
+            <TextBox
+                x:Name="txtboxGoal"
+                Canvas.Left="179"
+                Canvas.Top="35"
+                Width="120"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                PreviewTextInput="txtboxGoal_PreviewTextInput"
+                TextWrapping="Wrap" />
+            <TextBox
+                x:Name="txtboxSavingsInterestRate"
+                Canvas.Left="179"
+                Canvas.Top="66"
+                Width="120"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                PreviewTextInput="txtboxSavingsInterestRate_PreviewTextInput"
+                TextWrapping="Wrap" />
+            <TextBox
+                x:Name="txtboxSavingDuration"
+                Canvas.Left="179"
+                Canvas.Top="92"
+                Width="120"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                PreviewTextInput="txtboxSavingDuration_PreviewTextInput"
+                TextWrapping="Wrap" />
+        </Canvas>
+        <Label
+            Canvas.Left="483"
+            Canvas.Top="676"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Balance:"
+            FontFamily="Gadugi"
+            FontSize="16"
+            FontWeight="Bold" />
+        <TextBox
+            x:Name="txtboxBalance"
+            Canvas.Left="365"
+            Canvas.Top="712"
+            Width="309"
+            Height="177"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Background="#FF373535"
+            BorderBrush="#FF73A0A4"
+            BorderThickness="5,1,5,5"
+            FontFamily="Gadugi"
+            FontSize="14"
+            Foreground="#FFEAEAEA"
+            SelectionBrush="#FF73A0A4"
+            TextWrapping="Wrap"
+            Visibility="Visible" />
+        <Label
+            Canvas.Left="800"
+            Canvas.Top="676"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Savings Result:"
+            FontFamily="Gadugi"
+            FontSize="16"
+            FontWeight="Bold" />
+        <TextBox
+            x:Name="txtboxSavingsResult"
+            Canvas.Left="711"
+            Canvas.Top="712"
+            Width="309"
+            Height="177"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Background="#FF373535"
+            BorderBrush="#FF73A0A4"
+            BorderThickness="5,1,5,5"
+            FontFamily="Gadugi"
+            FontSize="14"
+            Foreground="#FFEAEAEA"
+            SelectionBrush="#FF73A0A4"
+            TextWrapping="Wrap"
+            Visibility="Visible" />
+        <Canvas
+            Canvas.Left="345"
+            Canvas.Top="499"
+            Width="92"
+            Height="15"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center">
+            <RadioButton x:Name="rbtnSavingsYes" Content="Yes" Checked="rbtnSavingsYes_Checked" />
+            <RadioButton
+                x:Name="rbtnSavingsNo"
+                Canvas.Left="57"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="No" Checked="rbtnSavingsNo_Checked" />
+
+        </Canvas>
+
+    </Canvas>
+</Window>
